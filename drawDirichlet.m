@@ -41,7 +41,7 @@ surf(axSimplex, aySimplex, pdfVal, "EdgeColor", "none");
 xlim([0, 1]);
 ylim([0, sqrt(3)/2]);
 maxVal = max(pdfVal(pdfVal~=Inf), [], "all");
-if maxVal >= zMaxCond % 最大でも15とし，それ以外は最大値の1.2倍
+if maxVal >= zMaxCond % 最大でもzMaxCondとし，それ以外は最大値の1.2倍
     zMax = zMaxCond; % ここは要調整
     cMax = zMaxCond; % カラーバーの上限値
 else
