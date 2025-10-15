@@ -85,11 +85,11 @@ text(0.65, 0.8, 0, str, ...
     "Interpreter", "latex");
 
 %% Save figures
-savefig(fig1, "./simplex_3d.fig", "compact");
+savefig(fig1, "./simplex_3d.fig");
 saveas(fig1, "./simplex_3d.svg", "svg");
 saveas(fig1, "./simplex_3d.png", "png");
 
-savefig(fig2, "./simplex_topview.fig", "compact");
+savefig(fig2, "./simplex_topview.fig");
 saveas(fig2, "./simplex_topview.svg", "svg");
 saveas(fig2, "./simplex_topview.png", "png");
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% EOF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
