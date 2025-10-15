@@ -35,14 +35,15 @@ axSimplex = squeeze(axisSimplex(1, :, :));
 aySimplex = squeeze(axisSimplex(2, :, :));
 
 %% Show 3D graph
+zMaxCond = 15;
 fig1 = figure("Position", [50, 50, 561, 473]);
 surf(axSimplex, aySimplex, pdfVal, "EdgeColor", "none");
 xlim([0, 1]);
 ylim([0, sqrt(3)/2]);
 maxVal = max(pdfVal(pdfVal~=Inf), [], "all");
-if maxVal >= 15 % 最大でも15とし，それ以外は最大値の1.2倍
-    zMax = 15; % ここは要調整
-    cMax = 15; % カラーバーの上限値
+if maxVal >= zMaxCond % 最大でも15とし，それ以外は最大値の1.2倍
+    zMax = zMaxCond; % ここは要調整
+    cMax = zMaxCond; % カラーバーの上限値
 else
     zMax = ceil(maxVal * 1.2); % ここは要調整
     cMax = maxVal; % カラーバーの上限値
