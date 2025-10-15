@@ -22,7 +22,8 @@ z = 1 - ax - ay;
 z = z .* fliplr(tril(ones(length(z)), -1)');
 
 %% Calculate PDF value
-g = @(alpha, d) (gamma(sum(alpha)) / (prod(gamma(alpha))));
+% g = @(alpha, d) (gamma(sum(alpha)) / (prod(gamma(alpha)))); % 多変量ベータ関数
+g = @(alpha, d) exp(gammaln(sum(alpha)) - sum(gammaln(alpha))); % 多変量ベータ関数（オーバーフロー対策）
 pdfVal = g(alpha, dim) .* ax .^ (alpha(1) - 1) .* ay .^ (alpha(2) - 1) .* z .^ (alpha(3) - 1);
 
 %% Affine transform
